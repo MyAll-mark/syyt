@@ -85,7 +85,7 @@ const getHospitalInfo = async () => {
         total.value = result.data.totalElements;
 
     }
-    console.log("home/index",result.data.content);
+    // console.log("home/index",result.data.content);
     console.log("home/index/hasHospitalArr",hasHospitalArr.value);
     // console.log(result.data.totalElements);
 
