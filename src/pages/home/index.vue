@@ -7,14 +7,17 @@
         <!-- 底部展示医院结构 -->
         <el-row gutter="20">
             <el-col :span="20">
-                <Level></Level>
-                <Region />
-                <div class="hospital">
+                <!-- 等级子组件 -->
+                <Level @getLevel="getLevel" />  
+                 <!--地区 -->
+                <Region @getRegion="getRegion" />
+                <div class="hospital" v-if="hasHospitalArr.length > 0">
                     <!-- <Card class="item" v-for="(item, index) in total" :key="index" :hospitalInfo="item" /> -->
                     <Card class="item" v-for="(item, index) in hasHospitalArr" :key="index" :hospitalInfo="item" />
                     <!-- v-for="(item, index) in hasHospitalArr" -->
                     <!-- <Card class="item" v-for="item in 10" :key="item" ></Card> -->
                 </div>
+                <el-empty v-else description="暂无数据" />
                 <!-- 分页器 -->
                 <el-pagination 
                 v-model:current-page="pageNo" 
@@ -101,6 +104,21 @@ const sizeChange = () => {
     pageNo.value = 1;
     //再次发请求获取医院的数据
     getHospitalInfo();
+};
+
+
+//子组件自定义事件:获取儿子给父组件传递过来的等级参数
+const getLevel = (level: string) => {
+  //收集参数:等级参数
+  hostype.value = level;
+  //再次发请求
+  getHospitalInfo();
+};
+//子组件自定义事件：获取子组件传递过来的地区参数
+const getRegion = (region: string) => {
+  //存储地区的参数
+  districtCode.value = region;
+  getHospitalInfo();
 };
 </script>
 
