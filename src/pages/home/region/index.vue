@@ -42,8 +42,9 @@ const getRegion = async ()=>{
 const changeRegion = (region:string)=>{
       RegionFlag.value = region;
       //给父组件传递区域的参数
-      // $emit('getRegion',region);
+      $emit('getRegion',region);
 }
+let $emit = defineEmits(['getRegion'])
 
 </script>
 
