@@ -1,7 +1,7 @@
 <template>
     <div class="top"> 
         <div class="content">
-            <div class="left">
+            <div class="left" @click="goDetail">
                 <img src="../../assets/images/logo.png" alt="">
                 <p>尚医通 预约挂号统一平台</p>
             </div>
@@ -15,7 +15,13 @@
 </template>
 
 <script setup lang="ts">
-
+import { useRouter } from "vue-router";
+//获取路由器对象
+let $router = useRouter();
+//点击医院卡片的时候跳转到医院详情页面
+const goDetail = () => {
+  $router.push({ path: "/home"});
+};
 
 
 
