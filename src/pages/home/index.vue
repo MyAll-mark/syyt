@@ -55,7 +55,7 @@ import { Content, HospitalResponseData } from "@/api/home/type";
 //分页器页码
 let pageNo = ref<number>(1);
 //一页展示几条数据
-let pageSize = ref<number>(1);
+let pageSize = ref<number>(10);
 //存储已有的医院的数据
 let hasHospitalArr = ref<Content>([]);
 //存储医院总个数
