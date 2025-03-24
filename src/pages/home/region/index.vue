@@ -5,6 +5,7 @@
         <div class="left">地区：</div>
         <ul>
             <li :class="{active:RegionFlag==''}" @click="changeRegion('')">全部</li>
+            
             <li v-for="item in RegionArr"  :key="item.value" :class="{active:RegionFlag==item.value}" @click="changeRegion(item.value)">{{ item.name }}</li>
             <!-- <li>123</li>
             <li>123</li>
