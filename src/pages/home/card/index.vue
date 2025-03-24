@@ -21,8 +21,8 @@
             </div>
             
             <div class="right">
-                <!-- <img :src="`data:image/jpeg;base64,${hospitalInfo.logoData}`" alt=""> -->
-                 <img src="@/assets/images/logo.png" alt="">
+                <img :src="`data:image/jpeg;base64,${hospitalInfo.logoData}`" alt="">
+                 <!-- <img src="@/assets/images/logo.png" alt=""> -->
             </div>
         </div>
         
