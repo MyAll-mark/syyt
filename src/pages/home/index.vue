@@ -30,7 +30,7 @@
                     @size-change="sizeChange" />
             </el-col>
             <el-col :span="4">
-
+                <Tip></Tip>
             </el-col>
 
         </el-row>
@@ -46,8 +46,9 @@ import { reqHospital } from "@/api/home";
 import Carousel from "./carousel/index.vue";
 import Search from "./search/index.vue";
 import Level from "./level/index.vue";
-import Region from "./region/index.vue"
-import Card from "./card/index.vue"
+import Region from "./region/index.vue";
+import Card from "./card/index.vue";
+import Tip from "./tip/index.vue";
 import { Content, HospitalResponseData } from "@/api/home/type";
 
 
