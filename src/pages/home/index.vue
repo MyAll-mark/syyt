@@ -30,7 +30,7 @@
                     @size-change="sizeChange" />
             </el-col>
             <el-col :span="4">
-                <Tip></Tip>
+                <Tip/>
             </el-col>
 
         </el-row>
@@ -48,7 +48,7 @@ import Search from "./search/index.vue";
 import Level from "./level/index.vue";
 import Region from "./region/index.vue";
 import Card from "./card/index.vue";
-import Tip from "./tip/index.vue";
+import Tip from "./tip/index.vue"
 import { Content, HospitalResponseData } from "@/api/home/type";
 
 
