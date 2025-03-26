@@ -48,7 +48,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {
   Document,
   Menu as IconMenu,
@@ -57,8 +57,15 @@ import {
   Search,
   HomeFilled,
 } from "@element-plus/icons-vue";
-
-
+import { useRouter,useRoute } from "vue-router";
+// 获取路由
+let $router = useRouter();
+// 获取当前路由信息
+let $route = useRoute();
+const changeActive = (path : string)=>{
+    // 跳转到对应路由
+    $router.push({path});
+}
 
 </script>
 
