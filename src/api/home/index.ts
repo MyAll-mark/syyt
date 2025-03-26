@@ -1,4 +1,4 @@
-//统一管理首页模块接口
+//统一管理首页模块接口   二次封装
 import request from "@/utils/request";
 import type { HospitalResponseData, HospitalLevelAndRegionResponseData, HospitalInfo } from './type'
 
