@@ -1,6 +1,6 @@
 <template>
     <div > 
-     
+     停诊信息
     </div>
 </template>
 
