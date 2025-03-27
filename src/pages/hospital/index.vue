@@ -58,6 +58,10 @@ import {
   HomeFilled,
 } from "@element-plus/icons-vue";
 import { useRouter,useRoute } from "vue-router";
+import { onMounted } from "vue";
+import useDetailStore from "@/store/modules/hospitalDetails";
+// 获取仓库对象
+let detailStore = useDetailStore();
 // 获取路由
 let $router = useRouter();
 // 获取当前路由信息
@@ -66,6 +70,10 @@ const changeActive = (path : string)=>{
     // 跳转到对应路由
     $router.push({path});
 }
+// 当组件挂载时通知仓库发请求    当页面不显示时，隐藏就可以显示
+onMounted(()=>{
+    detailStore.getHospital($route.query.hoscode as string);
+})
 
 </script>
 
