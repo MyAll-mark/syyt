@@ -21,6 +21,7 @@
     <div class="content">
         <div class="left">
             <img src="`data:image/jpeg;base64,` + hospitalStore.hospitalInfo.hospital?.logoData" alt="">
+            <!-- <img :src="`data:image/jpeg;base64,${hospitalStore.hospitalInfo.hospital?.logoData}`" alt=""> -->
         </div>
         <div class="right">
             1234
