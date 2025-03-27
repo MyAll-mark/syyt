@@ -1,7 +1,7 @@
 <template>
     <div class="register"> 
      <div class="top">
-        <div class="title">xxxx</div>
+        <div class="title">{{hospitalStore.hospitalInfo.hospital.hosname}}</div>
         <div class="level">
             <svg t="1743082649888" class="icon" viewBox="0 0 1024 1024" 
                 version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2038" 
@@ -15,15 +15,26 @@
                 67.404396 688.461991 663.216004 669.500127 648.940882 660.09492z" fill="#d4237a" p-id="2042">
             </path>
             </svg>
-            默默
+            默默{{hospitalStore.hospitalInfo.hospital.param.hostypeString}}
         </div>
-     </div>
+    </div>
+    <div class="content">
+        <div class="left">
+            <img src="`data:image/jpeg;base64,` + hospitalStore.hospitalInfo.hospital?.logoData" alt="">
+        </div>
+        <div class="right">
+            1234
+        </div>
+    </div>
+    
     </div>
 </template>
 
 <script setup lang="ts">
+import useDetailStore from "@/store/modules/hospitalDetails";
 
 
+let hospitalStore = useDetailStore();
 
 
 </script>
