@@ -1,12 +1,15 @@
 import { defineStore } from "pinia";
 import { reqHospitalDetail } from "@/api/hospital";
 import type { HospitalDetail } from "@/api/hospital/type";
+import type {DetailState} from "./interface";
+import type { HosPitalDetail, DeparmentResponseData, DeparmentArr } from '@/api/hospital/type';
 // 选择式API
 const useDetailStore = defineStore('Detail',{
-    state:()=>{
+    state: (): DetailState => {
         return{
             //医院详情的数据
-            hospitalInfo:{}
+            // hospitalInfo:({} as HospitalDetail),
+            hospitalInfo: ({} as HosPitalDetail),
         }
     },
     actions:{
