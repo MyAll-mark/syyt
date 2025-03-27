@@ -20,11 +20,18 @@
     </div>
     <div class="content">
         <div class="left">
-            <img src="`data:image/jpeg;base64,` + hospitalStore.hospitalInfo.hospital?.logoData" alt="">
-            <!-- <img :src="`data:image/jpeg;base64,${hospitalStore.hospitalInfo.hospital?.logoData}`" alt=""> -->
+            <!-- <img src="`data:image/jpeg;base64,` + hospitalStore.hospitalInfo.hospital?.logoData" alt=""> -->
+             <!-- 下面这个像之前card一样写好好的，非要写成上面那样 -->
+            <img :src="`data:image/jpeg;base64,${hospitalStore.hospitalInfo.hospital?.logoData}`" alt="">
         </div>
         <div class="right">
-            1234
+            <div>挂号规则</div>
+            <div class="time">预约周期</div>
+            <div class="address">具体地址</div>
+            <div class="route">规划路线</div>
+            <div class="releasetime">退号时间</div>
+            <div class="rule">医院预约规则</div>
+            <div class="ruleInfo"></div>
         </div>
     </div>
     
