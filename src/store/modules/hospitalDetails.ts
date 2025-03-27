@@ -11,4 +11,5 @@ const useDetailStore = defineStore('Detail',{
 
     },
 });
+// 获取仓库的方法暴露
 export default useDetailStore;
