@@ -15,10 +15,12 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from "vue-router";
+import { useRouter,useRoute } from "vue-router";
 //获取路由器对象
 let $router = useRouter();
+let $route = useRoute();
 //点击医院卡片的时候跳转到医院详情页面
+console.log($route);
 const goDetail = () => {
   $router.push({ path: "/home"});
 };
