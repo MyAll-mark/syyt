@@ -18,6 +18,7 @@
             默默{{hospitalStore.hospitalInfo.hospital.param.hostypeString}}
         </div>
     </div>
+    <!-- 内容展示区 -->
     <div class="content">
         <div class="left">
             <!-- <img src="`data:image/jpeg;base64,` + hospitalStore.hospitalInfo.hospital?.logoData" alt=""> -->
@@ -26,15 +27,29 @@
         </div>
         <div class="right">
             <div>挂号规则</div>
-            <div class="time">预约周期</div>
-            <div class="address">具体地址</div>
-            <div class="route">规划路线</div>
-            <div class="releasetime">退号时间</div>
-            <div class="rule">医院预约规则</div>
-            <div class="ruleInfo"></div>
+            <div class="time">
+              预约周期:10天 放号时间：{{ hospitalStore.hospitalInfo.bookingRule?.releaseTime }}
+              停诊时间：{{ hospitalStore.hospitalInfo.bookingRule?.quitTime }}
+            </div>
+            <div class="address">
+              具体地址:{{ hospitalStore.hospitalInfo.hospital?.address }}
+            </div>
+            <div class="route">
+              规划路线:{{ hospitalStore.hospitalInfo.hospital?.route }}
+            </div>
+            <div class="releasetime">
+              退号时间:{{ hospitalStore.hospitalInfo.bookingRule?.quitTime }}
+            </div>
+            <div class="rule">医院预约规则:
+
+            </div>
+            <div class="ruleInfo" v-for="(item,index) in hospitalStore.hospitalInfo.bookingRule.rule" :key="index">
+              {{ item }}
+            </div>
         </div>
     </div>
-    
+    <!-- 放置每个医院的科室 -->
+     <div></div>
     </div>
 </template>
 
