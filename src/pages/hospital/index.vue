@@ -68,13 +68,15 @@ let $router = useRouter();
 let $route = useRoute();
 const changeActive = (path : string)=>{
     // 跳转到对应路由
-    $router.push({path});
+    $router.push({path,query:{hoscode:$route.query.hoscode}});
 }
 // console.log("hospital下的index",$route.query);
 // console.log("hospital下的index的$route.query.hoscode",$route.query.hoscode);
 // 当组件挂载时通知仓库发请求    当页面不显示时，隐藏就可以显示
 onMounted(()=>{
     detailStore.getHospital($route.query.hoscode as string);
+
+    detailStore.getDepartment($route.query.hoscode as string)
 })
 
 </script>
