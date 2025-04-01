@@ -1,0 +1,17 @@
+{{Main_Leader_Instructions}}{{Main_Leader_sign}}{{Main_Leader_Data}}
+{{Vice_Leader_Instructions}}{{Vice_Leader_sign}}{{Vice_Leader_Data}}
+{{Legal_Affairs_Instructions}}{{Legal_Affairs_sign}}{{Legal_Affairs_Data}}
+{{Legal_Review_Instructions}}{{Legal_Review_sign}}{{Legal_Review_Data}}
+{{Case_Handling_Instructions}}{{Case_Handling_sign}}{{Case_Handling_Data}}
+{{Case_Number}}
+{{Start_time}}
+{{Team_Leader}}
+{{Team_Position}}
+{{Case_Information}}
+{{Concrete_Plan}}
+{{Case_Handling}}
+{{Case_Handler}}
+{{Data}}
+{{Province}}
+{{City}}
+{{District}}
