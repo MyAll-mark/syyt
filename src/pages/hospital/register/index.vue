@@ -61,7 +61,32 @@
             </li>
             </ul>
         </div>
-        <div class="deparment">456</div>
+        <div class="deparmentInfo">
+          <!-- <ul>
+            <li 
+            
+            v-for="d in hospitalStore.deparmentArr"
+            
+            >
+              {{ d.children[currentIndex].depname }}
+            </li>
+          </ul> -->
+          <div class="showDeparment"
+          v-for="(deparment) in hospitalStore.deparmentArr"
+           :key="deparment.depcode"
+          >
+            <h1>{{ deparment.depname }}</h1>
+            <ul>
+              <li 
+                @click="showLogin(item)"
+                v-for="item in deparment.children"
+                :key="item.depcode"
+              >
+                {{ item.depname }}
+            </li>
+            </ul>
+          </div>
+        </div>
      </div>
     </div>
 </template>
@@ -76,6 +101,10 @@ let hospitalStore = useDetailStore();
 let currentIndex = ref<number>(0)
 const changeindex= (index:number)=>{
   currentIndex.value = index;
+}
+
+const showLogin =(item:any)=>{
+  
 }
 
 </script>
