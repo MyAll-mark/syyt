@@ -48,17 +48,35 @@
             </div>
         </div>
     </div>
-    <!-- 放置每个医院的科室 -->
-     <div></div>
+    <!-- 放置每个医院的科室数据 -->
+     <div class="deparment">
+        <div class="leftNav">
+            <ul>
+              <li 
+              @click="changeindex(index)"
+              v-for="(department,index) in hospitalStore.deparmentArr" 
+              :key="department.depcode" 
+              :class="{active:index==currentIndex}">
+              {{ department.depname }}
+            </li>
+            </ul>
+        </div>
+        <div class="deparment">456</div>
+     </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import useDetailStore from "@/store/modules/hospitalDetails";
+import { ref } from "vue";
 
 
 let hospitalStore = useDetailStore();
 
+let currentIndex = ref<number>(0)
+const changeindex= (index:number)=>{
+  currentIndex.value = index;
+}
 
 </script>
 
