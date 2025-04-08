@@ -51,6 +51,7 @@
     <!-- 放置每个医院的科室数据 -->
      <div class="deparment">
         <div class="leftNav">
+          <!-- 放置每一个医院的科室的数据 -->
             <ul>
               <li 
               @click="changeindex(index)"
@@ -62,20 +63,14 @@
             </ul>
         </div>
         <div class="deparmentInfo">
-          <!-- <ul>
-            <li 
-            
-            v-for="d in hospitalStore.deparmentArr"
-            
-            >
-              {{ d.children[currentIndex].depname }}
-            </li>
-          </ul> -->
+        
+          <!-- 用一个div代表:大科室与小科室 -->
           <div class="showDeparment"
-          v-for="(deparment) in hospitalStore.deparmentArr"
-           :key="deparment.depcode"
+             v-for="(deparment) in hospitalStore.deparmentArr"
+            :key="deparment.depcode"
           >
-            <h1>{{ deparment.depname }}</h1>
+            <h1 class="cur">{{ deparment.depname }}</h1>
+            <!-- 每一个大的科室下小科室 -->
             <ul>
               <li 
                 @click="showLogin(item)"
@@ -101,10 +96,19 @@ let hospitalStore = useDetailStore();
 let currentIndex = ref<number>(0)
 const changeindex= (index:number)=>{
   currentIndex.value = index;
+
+  //点击导航获取右侧科室(大的科室H1标题)
+  let allH1 = document.querySelectorAll(".cur");
+  console.log(allH1);
+  //滚动到对应科室的位置
+  allH1[currentIndex.value].scrollIntoView({
+    behavior: "smooth", //过渡动画效果
+    block: "start", //滚动到位置 默认起始位置
+  });
 }
 
 const showLogin =(item:any)=>{
-  
+
 }
 
 </script>
