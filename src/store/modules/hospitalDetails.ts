@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { reqHospitalDetail } from "@/api/hospital";
+import { reqHospitalDetail,reqHospitalDeparment } from "@/api/hospital";
 import type { HospitalDetail } from "@/api/hospital/type";
 import type {DetailState} from "./interface";
 import type { HosPitalDetail, DeparmentResponseData, DeparmentArr } from '@/api/hospital/type';
@@ -10,6 +10,8 @@ const useDetailStore = defineStore('Detail',{
             //医院详情的数据
             // hospitalInfo:({} as HospitalDetail),
             hospitalInfo: ({} as HosPitalDetail),
+            //存储医院科室数据
+            deparmentArr:[],
         }
     },
     actions:{
@@ -19,6 +21,15 @@ const useDetailStore = defineStore('Detail',{
                 this.hospitalInfo = result.data;
             }
             console.log("hoscode",hoscode)
+        },
+        // 获取某一个医院科室的数据
+        async getDepartment(hoscode){
+            let result : DeparmentResponseData =await reqHospitalDeparment(hoscode)
+            //存储数据
+            if(result.code == 200){
+                this.deparmentArr = result.data;
+            }
+
         }
     },
     getters:{
