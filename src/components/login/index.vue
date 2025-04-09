@@ -11,7 +11,7 @@
                         </el-input>
                     </el-form-item>
                     <el-form-item>
-                        <el-input placeholder="请输入手机验证码" :prefix--icon="Lock">
+                        <el-input placeholder="请输入1手机验证码" :prefix--icon="Lock">
 
                         </el-input>
                     </el-form-item>
