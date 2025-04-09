@@ -13,7 +13,9 @@ const useUserStore = defineStore("User",  {
     },
 
     getters:{
-        
+
     }
 
-} )
+} );
+
+export default useUserStore;
