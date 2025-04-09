@@ -43,6 +43,7 @@
         </div>
         <!-- 右侧详情 -->
         <div class="content">
+        
             <router-view/>
         </div>
     </div>
