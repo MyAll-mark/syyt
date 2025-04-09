@@ -1,6 +1,12 @@
 <template>
     <div class="login_container">
-        <el-dialog v-model="userStore.visiable" title="用户登录"></el-dialog>
+        <el-dialog v-model="userStore.visiable" title="用户登录">
+            
+            <el-row>
+                <el-col :span="12">123</el-col>
+                <el-col :span="12">456</el-col>
+            </el-row>
+        </el-dialog>
     </div>
 </template>
 
