@@ -89,7 +89,9 @@
 <script setup lang="ts">
 import useDetailStore from "@/store/modules/hospitalDetails";
 import { ref } from "vue";
-
+//获取user仓库的数据( visiable)可以控制login组件的对话框显示与隐藏
+import useUserStore from "@/store/modules/user";
+let userStore = useUserStore();
 
 let hospitalStore = useDetailStore();
 
@@ -105,11 +107,11 @@ const changeindex= (index:number)=>{
     behavior: "smooth", //过渡动画效果
     block: "start", //滚动到位置 默认起始位置
   });
-}
+};
 
 const showLogin =(item:any)=>{
-
-}
+  userStore.visiable=true;
+};
 
 </script>
 
