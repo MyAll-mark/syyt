@@ -3,8 +3,23 @@
         <el-dialog v-model="userStore.visiable" title="用户登录">
             
             <el-row>
-                <el-col :span="12">123</el-col>
-                <el-col :span="12">456</el-col>
+                <!-- 左侧结构 -->
+                <el-col :span="12" class="login">
+                    <el-form-item>
+                        <el-input placeholder="请输入手机号码" :prefix--icon="User">
+
+                        </el-input>
+                    </el-form-item>
+                    <el-form-item>
+                        <el-input placeholder="请输入手机验证码" :prefix--icon="Lock">
+
+                        </el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="12">
+                    
+
+                </el-col>
             </el-row>
         </el-dialog>
     </div>
@@ -13,6 +28,7 @@
 <script setup lang='ts'>
 // 导入 Vue 相关的 API
 import { ref } from 'vue';
+import { User, Lock } from "@element-plus/icons-vue";
 //获取user仓库的数据( visiable)可以控制login组件的对话框显示与隐藏
 import useUserStore from "@/store/modules/user";
 let userStore = useUserStore();
