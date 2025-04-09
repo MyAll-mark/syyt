@@ -7,7 +7,7 @@
             </div>
             <div class="right">
                 <p class="help">帮助中心</p>
-                <p class="login" >登录/注册</p>
+                <p class="login" @click="login" >登录/注册</p>
             </div>
         </div>
         
@@ -16,6 +16,10 @@
 
 <script setup lang="ts">
 import { useRouter,useRoute } from "vue-router";
+//获取user仓库的数据( visiable)可以控制login组件的对话框显示与隐藏
+import useUserStore from "@/store/modules/user";
+let userStore = useUserStore();
+
 //获取路由器对象
 let $router = useRouter();
 let $route = useRoute();
@@ -25,6 +29,9 @@ const goDetail = () => {
   $router.push({ path: "/home"});
 };
 
+const login=()=>{
+  userStore.visiable=true;
+};
 
 
 </script>
