@@ -34,7 +34,7 @@
             </el-col>
 
         </el-row>
-
+        <!-- <form22></form22> -->
     </div>
 </template>
 
@@ -48,7 +48,8 @@ import Search from "./search/index.vue";
 import Level from "./level/index.vue";
 import Region from "./region/index.vue";
 import Card from "./card/index.vue";
-import Tip from "./tip/index.vue"
+import Tip from "./tip/index.vue";
+import form22 from "./form22/index.vue";
 import { Content, HospitalResponseData } from "@/api/home/type";
 
 
